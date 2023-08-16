@@ -1,0 +1,118 @@
+#s-menu {
+  background-color: $bg-secondary;
+  padding: $gap-16 $gap-48;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include responsive-tablet() {
+    padding: $gap-16 20px;
+  }
+
+  nav {
+    display: flex;
+    gap: $gap-96;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: $gap-40;
+
+      @include responsive-tablet() {
+        display: none;
+      }
+
+      li {
+        a {
+          color: $color-white;
+          font-size: 1.8rem;
+          text-transform: uppercase;
+          font-weight: 500;
+          padding: 26px 0;
+
+          &:hover {
+            color: $color-main;
+            border-bottom: 3px solid $color-main;
+          }
+        }
+      }
+    }
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: $gap-72;
+
+    #profile {
+      gap: $gap-8;
+
+      &:hover img {
+        border: 2px solid $color-main;
+      }
+
+      img {
+        width: 48px;
+        border-radius: 100%;
+        border: 2px solid $bg-secondary;
+        transition: 0.5s;
+      }
+    }
+
+    #notifications {
+      @include responsive-tablet() {
+        display: none;
+      }
+
+      #bell {
+        position: relative;
+
+        img {
+          background-color: $color-main;
+          border-radius: 100%;
+        }
+
+        @keyframes notification-bell {
+          from {
+            background-color: greenyellow;
+          }
+
+          to {
+            background-color: transparent;
+          }
+        }
+
+        div {
+          width: 10px;
+          height: 10px;
+          background-color: greenyellow;
+          border-radius: 100%;
+
+          position: absolute;
+          right: 2px;
+          top: 2px;
+
+          animation-name: notification-bell;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+      }
+
+      img {
+        padding: 10px;
+        transition: 0.5s;
+        border-radius: 100%;
+
+        &:hover {
+          background-color: $color-main;
+        }
+      }
+    }
+
+    div {
+      display: flex;
+      gap: $gap-32;
+    }
+  }
+}

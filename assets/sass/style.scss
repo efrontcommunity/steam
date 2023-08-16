@@ -1,0 +1,6 @@
+@import "./variables", "./reset", "./menu", "./banner", "./filter",
+  "./navigation", "./category", "./gamesfree", "./footer";
+
+.grid-layout {
+  @include grid-layout();
+}
